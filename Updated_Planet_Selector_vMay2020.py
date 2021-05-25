@@ -2,12 +2,16 @@
 """
 File needed to execute code: Downloadable table from the HZ Gallery
 
-This code reads the table downloaded from the HZ Gallery. 
-Selects planets within a range for two parameters.
-Plots the two parameters on a scatter plot with box enclosing the ranges.
-Allows user to save scatter plot and csv file with selected data. 
+Objectives:
+1) Select exoplanets in a selected search scope consisting of two physical 
+or orbital properties.
+2) Generate a .csv file that lists exoplanets in the selected scope along 
+with their physical and orbital property meansurements.
+3) Plots the exoplanets in the selected search scope based on 
+two properties on a scatter plot with a red box indicating the scope.
+4) Allows user to save scatter plot and .csv file to personal computer. 
 
-@author: Shushmitha, Wynter & Paola
+@authors: Shushmitha, Wynter & Paola
 """
 
 # Import the necessary packages
@@ -23,26 +27,29 @@ import sys
 # ------------------------------------------------------
 # INPUTS & VARIABLES TO CHANGE:
 
-os.chdir("C:\\Users\\shush\\OneDrive\\Exoplanets\\Planet_Selector\\Data\\") 
 # Write the filepath of the file with HZG data
-f = open("hzGallery.csv",'r') # Write the name of the file with the HZG data
+os.chdir("C:\\Users\\shush\\OneDrive\\Exoplanets\\Planet_Selector\\Data\\") 
 
-# Insert which parameters you want to examine:
+# Write the name of the file with the HZG data
+f = open("hzGallery.csv",'r') 
+
+# Insert which properties/parameters you want to examine:
 # parameter1 will go on the x-axis of the graph and will be the first column of the final table
 parameter1 = 'Period'
 # parameter2 will do on the y-axis of the graph and will be the second column of the final table
-parameter2 = 'Radius'
+parameter2 = 'Mass'
 
 parameter1Units = "days" #units corresponding to parameter1
 parameter2Units = "Jupiter Radii" #units corresponding to parameter2
 
-# Parameter Space we are looking at. Max and min values for parameter1 and parameter2
-(x_min, x_max, y_min, y_max) = (0, 3.5, 1, 3)  # change to values you want 
+# selected search scope. Max and min values for parameter1 and parameter2
+(x_min, x_max, y_min, y_max) = (0, 5, 1, 4)  # change to values you want 
 
 # What you want to name the file with the plot to be named
-output_fig='Period_Radius1-3.5.png'
+output_fig = parameter1 + "_" + parameter2 + ".png"
 
-# Create a name for an excel file which will contain an easy list of the planet names in the chosen parameter space
+# Create a name for an excel file which will contain an easy list of the 
+# planet names in the selected search scope
 new_filename = "Spring19_Planet_List.csv"  # output list of planets within those ranges
 
 # ------------------------------------------------------
@@ -108,17 +115,17 @@ x = final_table[:,parameter1a].tolist()
 y = final_table[:,parameter2a].tolist()
 
 # The operation below gets the indicies of the planets in the array final_table that 
-# are in the parameter space we are looking at
+# are in the selected search scope
 indicis_in_parameter_space = np.where((final_table[:,parameter1a]>=x_min) 
                   & (final_table[:,parameter1a]<x_max) 
                   & (final_table[:,parameter2a]>=y_min) 
                   & (final_table[:,parameter2a]<y_max))[0].tolist()
 
 # If the list, indicis_in_parameter_space is empty, that means that the user did not enter
-# a parameter space that is appropriate to the parameters they entered.
-# Output an error message and stop the program if a wrong parameter space is entered.
+# a selected search scope that is appropriate to the parameters they entered.
+# Output an error message and stop the program if a wrong selected search scope is entered.
 if(len(indicis_in_parameter_space) == 0):
-    print("The parameter space you entered is not within the possible values for parameter1 and/or parameter2.")
+    print("The scope you entered is not within the possible values for parameter1 and/or parameter2.")
     print("Please enter values for x_min, x_max, y_min, and y_max that are within the possible values for parameter1 and parameter2.")
     sys.exit()
 
@@ -132,12 +139,12 @@ for n,i in enumerate(indicis_in_parameter_space):
 #copy the list made above into an array so that we can work with float values   
 planets_in_parameter_space_array = np.array(planets_in_parameter_space)        
 
-#find the x and y minimum in the parameter space so that we can set the x-min
+#find the x and y minimum in the selected search scope so that we can set the x-min
 #and y-min the selector box on the plot (the box's lower left corner)
 x_min_in_box = min(planets_in_parameter_space_array[:,parameters[parameter1]])
 y_min_in_box = min(planets_in_parameter_space_array[:,parameters[parameter2]])
 
-#find the x and y maximum in the parameter space so that we can set the height
+#find the x and y maximum in the selected search scope so that we can set the height
 #and length of the box using the these values and the min_in_box values found above
 x_max_in_box = max(planets_in_parameter_space_array[:,parameters[parameter1]])
 y_max_in_box = max(planets_in_parameter_space_array[:,parameters[parameter2]])
@@ -174,7 +181,7 @@ axes.set_yscale('log')
 x_list_max = max(x)
 y_list_max = max(y)
 
-#set the limit of the axes to be a the max x and y value in the parameter space
+#set the limit of the axes to be a the max x and y value in the selected search scope
 #--------------------
 axes.set_xlim(0,x_list_max)
 axes.set_ylim(0,y_list_max)
@@ -200,7 +207,7 @@ fig.savefig(output_fig, dpi=300)
 
 # Now, using another index, add the name, radius, and period information to our new file containing data
 c = 1
-pernt = [[' ','Name', parameter1, parameter2]]
+pernt = [[' ','Name', 'Radius', 'Period']]
 for i in indicis_in_parameter_space:
     pernt.append([c, final_planet_names[i], final_table[i,parameter2a], final_table[i,parameter1a]])
     c = c + 1
