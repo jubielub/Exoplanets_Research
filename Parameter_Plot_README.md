@@ -1,4 +1,4 @@
-# Exoplanets_Research
+#Exoplanets Parameter Plot Program
 
 Program Objectives:
 
