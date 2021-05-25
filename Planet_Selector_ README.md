@@ -1,8 +1,8 @@
 Program Objectives:
-1) Find exoplanets in a selected scope consisting of two physical or orbital properties.
+1) Select exoplanets in a selected search scope consisting of two physical or orbital properties.
 2) Generate a .csv file that lists exoplanets in the selected scope along with their physical and orbital property meansurements.
-3) Plots the exoplanets in the selected scope based on two properties on a scatter plot with a red box indicating the scope.
-4) Allows user to save scatter plot and .csv file to personal files. 
+3) Plots the exoplanets in the selected search scope based on two properties on a scatter plot with a red box indicating the scope.
+4) Allows user to save scatter plot and .csv file to personal computer. 
 
 Steps to take prior to running this program: 
 1) Create a folder named ‘Exoplanets’ on your computer. Create a subfolder within that folder called ‘Planet_Selector’. Create a subfolder within the Planet_Selector folder named Data. 
