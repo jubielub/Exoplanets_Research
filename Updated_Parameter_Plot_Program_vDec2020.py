@@ -2,19 +2,20 @@
 """
 Files needed for program to execute: 
     
-1) Stellar&PlanetaryParam page from 
-Absorption Results and Parameter Data for Plots Fall 2019 Google Sheet
+1)'Stellar, Planetary, Absorption Data' page in 
+'Spring-19 Planets Stellar, Parameter, Na & K Absorption Data' Google Sheet
 
-2) File 'parameterplotdata-d463b21ec310.json' must be located in the same 
+2)'parameterplotdata-d463b21ec310.json' file must be located in the same 
 folder as this program's file
 
 The program reads exoplanets' physical and stellar properties 
-and sodium and potassium absorption data on exoplanets. 
+and sodium and potassium absorption data. 
 It plots planets based on any two physical and/or stellar properties and 
-indicates sodium and potassium absoprtion. Program saves all created plots to
-personally indicated file path.
+indicates which planets have absolute, potential, and no absorption of 
+sodium and/or potassium. Program saves all created plots to
+indicated file path in personal computer
 
-@author: Shushmitha and Wynter
+@authors: Shushmitha Radjaram and Wynter Broussard
 """
 
 # Import the necessary packages
@@ -57,9 +58,9 @@ planetDataList = rawList[1:]
 # ------------------------------------------------------
 # INPUTS & VARIABLES TO CHANGE:
 
-# Replace strFile string with the file path of the FOLDER 
+# Set strFile variable with the file path of the FOLDER 
 # you want the plots to be saved to
-strFile = "C:\\Users\\shush\\OneDrive\\Exoplanets\\Parameter_Plot\\Plots\\Plots"
+strFile = "..."
 
 # ------------------------------------------------------
 
