@@ -28,7 +28,7 @@ import sys
 # INPUTS & VARIABLES TO CHANGE:
 
 # Write the filepath of the file with HZG data
-os.chdir("C:\\Users\\shush\\OneDrive\\Exoplanets\\Planet_Selector\\Data\\") 
+os.chdir("...") 
 
 # Write the name of the file with the HZG data
 f = open("hzGallery.csv",'r') 
