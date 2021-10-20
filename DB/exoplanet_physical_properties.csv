@@ -1,0 +1,25 @@
+Planet_Name,Planet_Mass,Planet_Radius,Period,orbital_eccentricity,periastron_argument,percentage_of_the_orbital_phase_spent_within_the_conservative_h,percentage_of_the_orbital_phase_spent_within_the_optimistic_hab,planetary_equilibrium_temperature_periastron_hot_dayside,planetary_equilibrium_temperature_periastron_well_mixed,planetary_equilibrium_temperature_apastron_hot_dayside,planetary_equilibrium_temperature_apastron_well_mixed,planetary_density
+WASP-19b,1.06,1.392,0.8,,,,,,,,,0.438
+WASP-103b,1.49,1.528,0.9,,,,,,,,,0.553
+WASP-12b,1.645,1.79,1.1,,,,,,,,,0.320
+HAT-P-23b,1.34,1.368,1.2,,,,,,,,,1.010
+WASP-33b,2.093,1.497,1.2,,,,,,,,,0.0012
+Qatar-2b,2.494,1.144,1.3,,,,,,,,,2.200
+TrES-3b,1.19,1.336,1.3,,,,,,,,,0.994
+WASP-121b,1.183,1.865,1.3,,,,,,,,,0.266
+WASP-4b,1.186,1.321,1.3,,,,,,,,,0.665
+Qatar-1b,1.294,1.164,1.4,,,,,,,,,0.920
+WASP-46b,1.91,1.31,1.4,,,,,,,,,1.250
+CoRoT-1b,1.03,1.49,1.5,,,,,,,,,0.380
+WASP-36b,2.361,1.269,1.5,,,,,,,,,1.475
+WASP-52b,0.46,1.27,1.7,,,,,,,,,0.292
+WASP-48b,0.8,1.67,2.1,,,,,,,,,0.279
+WASP-74b,0.72,1.56,2.1,,,,,,,,,0.333
+HAT-P-32b,0.68,1.789,2.2,,,,,,,,,0.190
+HD 189733b,1.13,1.13,2.2,,,,,,,,,0.963
+WASP-49b,0.37,1.115,2.8,,,,,,,,,0.362
+WASP-98b,0.922,1.1,3,,,,,,,,,0.630
+WASP-45b,0.964,1.16,3.1,,,,,,,,,0.850
+WASP-31b,0.478,1.549,3.4,,,,,,,,,0.132
+WASP-6b,0.37,1.03,3.4,,,,,,,,,0.359
+WASP-96b,0.48,1.2,3.4,,,,,,,,,0.280
